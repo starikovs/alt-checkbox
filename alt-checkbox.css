@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  src: url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.eot');
+  src: url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.eot?#iefix') format('eot'), url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.woff') format('woff'), url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.ttf') format('truetype'), url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
+}
+.fontawesome-ok:before {
+  content: "\f00c";
+}
+.fontawesome-chevron-down:before {
+  content: "\f078";
+}
+.fontawesome-double-angle-down:before {
+  content: "\f103";
+}
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+.alt-checkbox-dress {
+  display: inline-block;
+  background: #fbfbfb;
+  background-image: -ms-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
+  background-image: -moz-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
+  background-image: -o-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fbfbfb), color-stop(1, #ededed));
+  background-image: -webkit-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
+  background-image: linear-gradient(to bottom, #fbfbfb 0%, #ededed 100%);
+  border: 1px solid #ccc;
+  border-radius: .2em;
+  font-size: .8em;
+  height: 1em;
+  outline: none;
+  position: relative;
+  -moz-transition: box-shadow 0.2s;
+  -o-transition: box-shadow 0.2s;
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  width: 1em;
+}
+.alt-checkbox-dress.small {
+  font-size: .8em;
+}
+.alt-checkbox-dress.medium {
+  font-size: 1em;
+}
+.alt-checkbox-dress.big {
+  font-size: 2em;
+}
+.alt-checkbox-dress.checked:before {
+  color: #999;
+  display: block;
+  height: 1em;
+  left: 0;
+  line-height: 1em;
+  position: absolute;
+  top: 0;
+  text-shadow: 1px 1px 0 #fff;
+  text-align: center;
+  width: 1em;
+}
+.alt-checkbox-dress:focus {
+  border-color: #74b9ef;
+  box-shadow: 0 0 7px #74b9ef;
+  outline: none;
+}
