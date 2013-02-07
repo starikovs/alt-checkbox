@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'FontAwesome';
-  font-style: normal;
-  font-weight: normal;
+  font-style: 'normal';
+  font-weight: 'normal';
   src: url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.eot');
   src: url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.eot?#iefix') format('eot'), url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.woff') format('woff'), url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.ttf') format('truetype'), url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
 }
@@ -48,9 +48,9 @@
 .alt-checkbox-dress.big {
   font-size: 2em;
 }
-.alt-checkbox-dress.checked:before {
+.alt-checkbox-dress:before {
   color: #999;
-  display: block;
+  display: none;
   height: 1em;
   left: 0;
   line-height: 1em;
@@ -59,6 +59,9 @@
   text-shadow: 1px 1px 0 #fff;
   text-align: center;
   width: 1em;
+}
+.alt-checkbox-dress.checked:before {
+  display: block;
 }
 .alt-checkbox-dress:focus {
   border-color: #74b9ef;

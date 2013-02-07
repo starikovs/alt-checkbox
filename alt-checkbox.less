@@ -55,23 +55,28 @@
   &.big {
     font-size: 2em;
   }
-}
 
-.alt-checkbox-dress.checked:before {
-  color: #999;
-  display: block;
-  height: 1em;
-  left: 0;
-  line-height: 1em;
-  position: absolute;
-  top: 0;
-  text-shadow: 1px 1px 0 #fff;
-  text-align: center;
-  width: 1em;
-}
+  &:before {
+    color: #999;
+    display: none;
+    height: 1em;
+    left: 0;
+    line-height: 1em;
+    position: absolute;
+    top: 0;
+    text-shadow: 1px 1px 0 #fff;
+    text-align: center;
+    width: 1em;
+  }
 
-.alt-checkbox-dress:focus {
-  border-color: #74b9ef;
-  box-shadow: 0 0 7px #74b9ef;
-  outline: none;
+  &.checked:before {
+    display: block;
+  }
+
+  &:focus {
+    border-color: #74b9ef;
+    box-shadow: 0 0 7px #74b9ef;
+    outline: none;
+  }
+
 }
