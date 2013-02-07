@@ -19,8 +19,6 @@
   font-family: 'FontAwesome', sans-serif;
 }
 .alt-checkbox-dress {
-  /*.box-sizing(border-box);*/
-
   display: inline-block;
   background: #fbfbfb;
   background-image: -ms-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
@@ -29,23 +27,21 @@
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fbfbfb), color-stop(1, #ededed));
   background-image: -webkit-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
   background-image: linear-gradient(to bottom, #fbfbfb 0%, #ededed 100%);
-  /*border: 1px solid #ccc;*/
-
   border-radius: .2em;
   box-shadow: 0 0 0 1px #ccc;
   font-size: .8em;
   height: 1em;
   outline: none;
   position: relative;
-  -moz-transition: box-shadow 0.2s;
-  -o-transition: box-shadow 0.2s;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
   width: 1em;
+}
+.alt-checkbox-dress:hover,
+.alt-checkbox-dress:focus {
+  box-shadow: 0 0 3px 1px #ccc;
 }
 .alt-checkbox-dress:before {
   color: #999;
-  display: none;
+  display: block;
   height: 1em;
   left: 0;
   line-height: 1em;
@@ -53,14 +49,13 @@
   top: 0;
   text-shadow: 1px 1px 0 #fff;
   text-align: center;
+  visibility: hidden;
   width: 1em;
 }
 .alt-checkbox-dress.checked:before {
-  display: block;
+  visibility: visible;
 }
 .alt-checkbox-dress:focus {
-  border-color: #74b9ef;
-  box-shadow: 0 0 7px #74b9ef;
   outline: none;
 }
 .alt-checkbox-dress.small,
