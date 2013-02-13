@@ -21,6 +21,7 @@
   border-radius: .2em;
   box-shadow: 0 0 0 1px #ccc;
   font-size: .8em;
+  line-height: 100%;
   outline: none;
   position: relative;
   text-decoration: none;
@@ -31,15 +32,21 @@
   }
 
   &:before {
-    color: #999;
     display: block;
-    line-height: 1em;
+    padding: .05em;
     position: relative;
-    text-shadow: 1px 1px 0 #fff;
+    text-shadow: 0px 1px 0 #fff;
     visibility: hidden;
+
+  }
+
+  &.outline-unchecked:before {
+    color: #eee;
+    visibility: visible;
   }
 
   &.checked:before {
+    color: #999;
     visibility: visible;
   }
 
@@ -53,16 +60,13 @@
 .alt-checkbox-label {
   &.small {
     font-size: .8em;
-    line-height: .8em;
   }
 
   &.medium {
     font-size: 1.6em;
-    line-height: 1.6em;
   }
 
   &.big {
     font-size: 2.4em;
-    line-height: 2.4em;
   }
 }

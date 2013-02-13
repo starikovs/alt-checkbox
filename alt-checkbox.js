@@ -1,6 +1,14 @@
 (function($) {
+    var settings = {
+        uncheckedOutline: false
+    };
+
     var methods = {
-        init: function () {
+        init: function (options) {
+            var settings = $.extend({
+                outlineUnchecked: true
+            }, options);
+
             return this.hide().each(function() {
                 var cb = $(this);
                 if (cb.prev(".alt-checkbox-dress").length > 0) {
@@ -8,7 +16,10 @@
                 }
 
                 var cbAltClass = cb.attr("data-alt-class"),
-                    alt = $("<a href=\"#\" class=\"alt-checkbox-dress\">").addClass(cbAltClass).insertBefore(cb);
+                    alt = $("<a href=\"#\" class=\"alt-checkbox-dress\">")
+                        .addClass(cbAltClass)
+                        .addClass(settings.outlineUnchecked ? "outline-unchecked" : "")
+                        .insertBefore(cb);
 
                 alt.bind("click.alt-checkbox", function(event) {
                     var alt = $(this);

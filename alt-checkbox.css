@@ -10,6 +10,7 @@
   border-radius: .2em;
   box-shadow: 0 0 0 1px #ccc;
   font-size: .8em;
+  line-height: 100%;
   outline: none;
   position: relative;
   text-decoration: none;
@@ -19,14 +20,18 @@
   box-shadow: 0 0 3px 1px #ccc;
 }
 .alt-checkbox-dress:before {
-  color: #999;
   display: block;
-  line-height: 1em;
+  padding: .05em;
   position: relative;
-  text-shadow: 1px 1px 0 #fff;
+  text-shadow: 0px 1px 0 #fff;
   visibility: hidden;
 }
+.alt-checkbox-dress.outline-unchecked:before {
+  color: #eee;
+  visibility: visible;
+}
 .alt-checkbox-dress.checked:before {
+  color: #999;
   visibility: visible;
 }
 .alt-checkbox-dress:focus {
@@ -35,15 +40,12 @@
 .alt-checkbox-dress.small,
 .alt-checkbox-label.small {
   font-size: .8em;
-  line-height: .8em;
 }
 .alt-checkbox-dress.medium,
 .alt-checkbox-label.medium {
   font-size: 1.6em;
-  line-height: 1.6em;
 }
 .alt-checkbox-dress.big,
 .alt-checkbox-label.big {
   font-size: 2.4em;
-  line-height: 2.4em;
 }
