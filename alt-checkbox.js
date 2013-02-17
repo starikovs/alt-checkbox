@@ -6,20 +6,40 @@
     var methods = {
         init: function (options) {
             var settings = $.extend({
+                iconClass: "fontawesome-ok",
+                sizeClass: "medium",
+                customClass: "",
+                labelSameSize: true,
                 outlineUnchecked: true
             }, options);
 
             return this.hide().each(function() {
-                var cb = $(this);
-                if (cb.prev(".alt-checkbox-dress").length > 0) {
+                var cb = $(this),
+                    data = cb.data("alt-checkbox");
+
+                if (data) {
                     return;
                 }
 
-                var cbAltClass = cb.attr("data-alt-class"),
-                    alt = $("<a href=\"#\" class=\"alt-checkbox-dress\">")
-                        .addClass(cbAltClass)
+                var alt = $("<a href=\"#\" class=\"alt-checkbox-dress\">")
+                        .addClass(settings.iconClass)
+                        .addClass(settings.sizeClass)
+                        .addClass(settings.customClass)
                         .addClass(settings.outlineUnchecked ? "outline-unchecked" : "")
-                        .insertBefore(cb);
+                        .insertBefore(cb),
+                    cbId = cb.attr("id"),
+                    cbLabel = $("[for='" + cbId + "']");
+
+                if (settings.labelSameSize) {
+                    cbLabel.addClass(settings.sizeClass);
+                }
+
+                cb.data("alt-checkbox", {
+                    alt: alt,
+                    label: cbLabel,
+                    labelSameSize: settings.labelSameSize,
+                    sizeClass: settings.sizeClass
+                });
 
                 alt.bind("click.alt-checkbox", function(event) {
                     var alt = $(this);
@@ -47,10 +67,20 @@
         clear: function() {
             return this.each(function() {
                 var cb = $(this),
-                    alt = cb.prev(".alt-checkbox-dress");
+                    data = cb.data("alt-checkbox");
 
-                alt.unbind(".alt-checkbox").remove();
+                if (!data) {
+                    return;
+                }
+
+                data.alt.unbind(".alt-checkbox").remove();
                 cb.unbind(".alt-checkbox");
+
+                if (data.labelSameSize) {
+                    data.label.removeClass(data.sizeClass);
+                }
+
+                cb.removeData("alt-checkbox");
             }).show();
         }
     };

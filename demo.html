@@ -10,23 +10,28 @@
 <body>
     <h1>alt-checkbox demo</h1>
 
-    <input type="checkbox" class="alt-checkbox" data-alt-class="fontawesome-ok small" id="checkbox1">
-    <label for="checkbox1" class="alt-checkbox-label small">Check Me! I'm small.</label>
+    <input type="checkbox" class="alt-checkbox" id="checkbox1">
+    <label for="checkbox1" class="alt-checkbox-label">Check Me! I'm small.</label>
 
-    <input type="checkbox" class="alt-checkbox" data-alt-class="fontawesome-ok medium" id="checkbox2">
-    <label for="checkbox2" class="alt-checkbox-label medium">Check Me! I'm medium.</label>
+    <input type="checkbox" class="alt-checkbox" id="checkbox2">
+    <label for="checkbox2" class="alt-checkbox-label">Check Me! I'm medium.</label>
 
-    <input type="checkbox" class="alt-checkbox" data-alt-class="fontawesome-coffee big" id="checkbox3">
-    <label for="checkbox3" class="alt-checkbox-label big">Check Me! I'm big.</label>
+    <input type="checkbox" class="alt-checkbox" id="checkbox3">
+    <label for="checkbox3" class="alt-checkbox-label">Check Me! I'm big.</label>
 
 
     <div>
-        <a href="javascript:jQuery('.alt-checkbox').altCheckbox()">make</a>
+        <a href="javascript:make()">make</a>
         <a href="javascript:jQuery('.alt-checkbox').altCheckbox('clear')">clear</a>
     </div>
 
     <script>
-        jQuery(".alt-checkbox").altCheckbox({outlineUnchecked: true});
+        var make = (function() {
+            jQuery("#checkbox1").altCheckbox({outlineUnchecked: false, sizeClass: "small"});
+            jQuery("#checkbox2").altCheckbox();
+            jQuery("#checkbox3").altCheckbox({sizeClass: "big", labelSameSize: false});
+        });
+        make();
     </script>
 
 </body>
