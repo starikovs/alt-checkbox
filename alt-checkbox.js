@@ -1,8 +1,4 @@
 (function($) {
-    var settings = {
-        uncheckedOutline: false
-    };
-
     var methods = {
         init: function (options) {
             var settings = $.extend({
