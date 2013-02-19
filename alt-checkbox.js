@@ -21,7 +21,7 @@
                     return;
                 }
 
-                var alt = $("<a href=\"#\" class=\"alt-checkbox-dress\">")
+                var alt = $("<a href=\"#\" class=\"alt-checkbox\">")
                         .addClass(settings.iconClass)
                         .addClass(settings.sizeClass)
                         .addClass(settings.customClass)
@@ -31,7 +31,7 @@
                     cbLabel = $("[for='" + cbId + "']");
 
                 if (settings.labelSameSize) {
-                    cbLabel.addClass(settings.sizeClass);
+                    cbLabel.addClass("alt-checkbox-label").addClass(settings.sizeClass);
                 }
 
                 cb.data("alt-checkbox", {
@@ -77,7 +77,7 @@
                 cb.unbind(".alt-checkbox");
 
                 if (data.labelSameSize) {
-                    data.label.removeClass(data.sizeClass);
+                    data.label.removeClass(data.sizeClass).removeClass("alt-checkbox-label");
                 }
 
                 cb.removeData("alt-checkbox");

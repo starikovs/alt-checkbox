@@ -10,26 +10,26 @@
 <body>
     <h1>alt-checkbox demo</h1>
 
-    <input type="checkbox" class="alt-checkbox" id="checkbox1">
-    <label for="checkbox1" class="alt-checkbox-label">Check Me! I'm small.</label>
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Check Me! I'm small.</label>
 
-    <input type="checkbox" class="alt-checkbox" id="checkbox2">
-    <label for="checkbox2" class="alt-checkbox-label">Check Me! I'm medium.</label>
+    <input type="checkbox" id="checkbox2">
+    <label for="checkbox2" >Check Me! I'm medium.</label>
 
-    <input type="checkbox" class="alt-checkbox" id="checkbox3">
-    <label for="checkbox3" class="alt-checkbox-label">Check Me! I'm big.</label>
+    <input type="checkbox" id="checkbox3">
+    <label for="checkbox3">Check Me! I'm big.</label>
 
 
     <div>
         <a href="javascript:make()">make</a>
-        <a href="javascript:jQuery('.alt-checkbox').altCheckbox('clear')">clear</a>
+        <a href="javascript:jQuery('[type=checkbox]').altCheckbox('clear')">clear</a>
     </div>
 
     <script>
         var make = (function() {
             jQuery("#checkbox1").altCheckbox({outlineUnchecked: false, sizeClass: "small"});
             jQuery("#checkbox2").altCheckbox();
-            jQuery("#checkbox3").altCheckbox({sizeClass: "big", labelSameSize: false});
+            jQuery("#checkbox3").altCheckbox({sizeClass: "big"});
         });
         make();
     </script>

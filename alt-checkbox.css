@@ -1,4 +1,4 @@
-.alt-checkbox-dress {
+.alt-checkbox {
   display: inline-block;
   background: #fbfbfb;
   background-image: -ms-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
@@ -15,11 +15,11 @@
   position: relative;
   text-decoration: none;
 }
-.alt-checkbox-dress:hover,
-.alt-checkbox-dress:focus {
+.alt-checkbox:hover,
+.alt-checkbox:focus {
   box-shadow: 0 0 3px 1px #ffce73;
 }
-.alt-checkbox-dress:before {
+.alt-checkbox:before {
   display: block;
   min-height: 1em;
   min-width: 1em;
@@ -29,26 +29,26 @@
   text-shadow: 0px 1px 0 #fff;
   visibility: hidden;
 }
-.alt-checkbox-dress.outline-unchecked:before {
+.alt-checkbox.outline-unchecked:before {
   color: #eee;
   visibility: visible;
 }
-.alt-checkbox-dress.checked:before {
+.alt-checkbox.checked:before {
   color: #999;
   visibility: visible;
 }
-.alt-checkbox-dress:focus {
+.alt-checkbox:focus {
   outline: none;
 }
-.alt-checkbox-dress.small,
+.alt-checkbox.small,
 .alt-checkbox-label.small {
   font-size: .8em;
 }
-.alt-checkbox-dress.medium,
+.alt-checkbox.medium,
 .alt-checkbox-label.medium {
   font-size: 1.6em;
 }
-.alt-checkbox-dress.big,
+.alt-checkbox.big,
 .alt-checkbox-label.big {
   font-size: 2.4em;
 }
