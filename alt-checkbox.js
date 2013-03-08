@@ -1,3 +1,14 @@
+/*
+ * jQuery alt-checkbox plugin
+ * Version 1.0
+ * http://alt-checkbox.starikovs.com
+ *
+ * jQuery Javascript plugin which helps to style checkbox with custom css. It uses icon fonts and it's scaled well.
+ *
+ * Copyright (c) 2013 alt-checkbox.starikovs.com
+ * Licensed under the MIT and GPL licenses.
+ */
+
 (function($) {
     var methods = {
         init: function (options) {
@@ -50,6 +61,7 @@
                 }).bind("keyup.alt-checkbox", function(event) {
                     if (event.keyCode === 32) {
                         $(this).click();
+                        event.preventDefault();
                     }
                 });
 

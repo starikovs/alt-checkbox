@@ -1,3 +1,14 @@
+/*
+ * alt-checkbox CSS file for icon fonts
+ * Version 1.0
+ * http://alt-checkbox.starikovs.com
+ *
+ * alt-checkbox CSS file that imports and utilizes icon fonts.
+ *
+ * Copyright (c) 2013 alt-checkbox.starikovs.com
+ * Licensed under the MIT and GPL licenses.
+ */
+
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
 /* fontawesome */
