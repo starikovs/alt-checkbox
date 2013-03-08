@@ -1,6 +1,8 @@
 alt-checkbox
 ============
 
+"Demo and original project page":http://alt-checkbox.starikovs.com
+
 Nice alternative for standard html checkbox. 
 
 Features:
