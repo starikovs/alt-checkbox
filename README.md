@@ -1,7 +1,7 @@
 alt-checkbox
 ============
 
-"Demo and original project page":http://alt-checkbox.starikovs.com
+[Demo and original project page](http://alt-checkbox.starikovs.com "alt-checkbox")
 
 Nice alternative for standard html checkbox. 
 
