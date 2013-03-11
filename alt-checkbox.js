@@ -62,6 +62,12 @@
                     if (event.keyCode === 32) {
                         $(this).click();
                         event.preventDefault();
+                        event.stopPropagation();
+                    }
+                }).bind("keydown.alt-checkbox", function(event) {
+                    if (event.keyCode === 32) {
+                        event.preventDefault();
+                        event.stopPropagation();
                     }
                 });
 
