@@ -1,9 +1,10 @@
 alt-checkbox
 ============
 
-[Demo and original project page](http://alt-checkbox.starikovs.com "alt-checkbox")
+Style checkbox with CSS and Icon Fonts with help of alt-checkbox jQuery plugin.
+It's a nice alternative for standard html checkbox.
 
-Nice alternative for standard html checkbox. 
+[Demo and Home Page](http://alt-checkbox.starikovs.com "alt-checkbox")
 
 Features:
 
