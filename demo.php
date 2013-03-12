@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>alt-checkbox demo</title>
+    <title>alt-checkbox PHP demo</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="alt-checkbox.js"></script>
     <link rel="stylesheet" href="alt-checkbox-icon-font.css">
