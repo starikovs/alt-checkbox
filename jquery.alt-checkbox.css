@@ -35,7 +35,7 @@
   padding: .05em;
   position: relative;
   text-align: center;
-  text-shadow: 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
+  text-shadow: 0 1px 0 #dddddd, 0 2px 0 #ffffff, 0 -1px 0 #dddddd;
   visibility: hidden;
 }
 .alt-checkbox.outline-unchecked:before {
