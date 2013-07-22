@@ -15,3 +15,14 @@ Features:
 - It's possible to navigate and check with keyboard (tab and space)
 
 alt-checkbox plugin is under the MIT license.
+
+Browsers
+============
+
+Tested in the following browsers:
+
+- Chrome 28
+- FireFox 22
+- Opera 12
+- IE 9
+- Safari 5
