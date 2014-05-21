@@ -29,8 +29,11 @@
                 }
 
                 var alt = $("<a href=\"#\" class=\"alt-checkbox\">")
-                        .addClass(settings.iconClass)
-                        .addClass(settings.sizeClass)
+                        .append(
+                            $('<i>')
+                            .addClass(settings.iconClass)
+                            .addClass(settings.sizeClass)
+                        )
                         .addClass(settings.customClass)
                         .addClass(settings.outlineUnchecked ? "outline-unchecked" : "")
                         .insertBefore(cb),
@@ -48,31 +51,30 @@
                     sizeClass: settings.sizeClass
                 });
 
-                alt.bind("click.alt-checkbox", function(event) {
-                    var alt = $(this);
-                    if (alt.hasClass("checked")) {
-                        alt.removeClass("checked");
-                        cb.prop("checked", false);
-                    } else {
-                        alt.addClass("checked");
-                        cb.prop("checked", true);
-                    }
+                alt.on("click.alt-checkbox", function(event) {
                     event.preventDefault();
-                }).bind("keyup.alt-checkbox", function(event) {
+
+                    var alt = $(this),
+                        isChecked = alt.hasClass('checked');
+                    alt.toggleClass('checked', !isChecked );
+                    cb
+                    .prop("checked", !isChecked)
+                    .triggerHandler('change');
+                }).on("keyup.alt-checkbox", function(event) {
                     if (event.keyCode === 32) {
                         $(this).click();
                         event.preventDefault();
                         event.stopPropagation();
                     }
-                }).bind("keydown.alt-checkbox", function(event) {
+                }).on("keydown.alt-checkbox", function(event) {
                     if (event.keyCode === 32) {
                         event.preventDefault();
                         event.stopPropagation();
                     }
                 });
 
-                cb.bind("change.alt-checkbox", function() {
-                    alt.click();
+                cb.on("change.alt-checkbox", function(e) {
+                    alt.toggleClass('checked', $(this).prop('checked') );
                 });
 
                 alt.addClass(cb.is(":checked") ? "checked" : "");
