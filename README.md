@@ -19,10 +19,4 @@ alt-checkbox plugin is under the MIT license.
 Browsers
 ============
 
-Tested in the following browsers:
-
-- Chrome 28
-- FireFox 22
-- Opera 12
-- IE 9
-- Safari 5
+All the supported browsers by FontAwesome.
