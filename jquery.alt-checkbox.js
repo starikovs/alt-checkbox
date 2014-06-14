@@ -13,7 +13,7 @@
     var methods = {
         init: function (options) {
             var settings = $.extend({
-                iconClass: "fontawesome-ok",
+                iconClass: "fa-check",
                 sizeClass: "medium",
                 customClass: "",
                 labelSameSize: true,
