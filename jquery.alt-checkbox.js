@@ -13,8 +13,8 @@
     var methods = {
         init: function (options) {
             var settings = $.extend({
-                iconClass: "fontawesome-ok",
-                sizeClass: "medium",
+                iconClass: "fa-check",
+                sizeClass: "fa-2x",
                 customClass: "",
                 labelSameSize: true,
                 outlineUnchecked: true
@@ -30,7 +30,9 @@
 
                 var alt = $("<a href=\"#\" class=\"alt-checkbox\">")
                         .append(
-                            $('<i>')
+                            $('<i>',{
+                                'class': 'fa'
+                            })
                             .addClass(settings.iconClass)
                             .addClass(settings.sizeClass)
                         )
