@@ -22,8 +22,8 @@
 
 
     <div>
-        <a href="javascript:make()">make</a>
-        <a href="javascript:jQuery('[type=checkbox]').altCheckbox('clear')">clear</a>
+        <a href="#" id="make">make</a>
+        <a href="#" id="clear">clear</a>
     </div>
 
     <script>
@@ -33,6 +33,16 @@
             jQuery("#checkbox3").altCheckbox({sizeClass: "big"});
         });
         make();
+
+        jQuery("#make").click(function (e) {
+            make();
+            e.preventDefault();
+        });
+
+        jQuery("#clear").click(function (e) {
+            jQuery('[type=checkbox]').altCheckbox('clear');
+            e.preventDefault();
+        });
     </script>
 
 </body>
