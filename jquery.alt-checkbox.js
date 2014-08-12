@@ -61,7 +61,7 @@
                     alt.toggleClass('checked', !isChecked );
                     cb
                     .prop("checked", !isChecked)
-                    .triggerHandler('change');
+                    .change();
                 }).on("keyup.alt-checkbox", function(event) {
                     if (event.keyCode === 32) {
                         $(this).click();
