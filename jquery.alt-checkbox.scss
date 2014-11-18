@@ -1,11 +1,10 @@
 /*
- * alt-checkbox LESS file
- * Version 1.0
- * http://alt-checkbox.starikovs.com
+ * alt-checkbox SCSS file
+ * https://github.com/julianxhokaxhiu/alt-checkbox
  *
- * alt-checkbox LESS file which helps to style checkbox with custom css using LESS syntax.
+ * alt-checkbox SCSS file which helps to style checkbox with custom css using SASS syntax.
  *
- * Copyright (c) 2013 alt-checkbox.starikovs.com
+ * Copyright (c) 2014 https://github.com/julianxhokaxhiu/alt-checkbox
  * Licensed under the MIT and GPL licenses.
  */
 
@@ -31,7 +30,7 @@
     &:hover, &:focus {
         box-shadow: 0 0 3px 1px #ffce73;
     }
-    & i {
+    i {
         display: block;
         min-height: 1em;
         min-width: 1em;
