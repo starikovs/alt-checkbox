@@ -1,0 +1,24 @@
+{
+  "name": "alt-checkbox",
+  "version": "1.0.1",
+  "homepage": "https://github.com/julianxhokaxhiu/alt-checkbox",
+  "authors": [
+    "Vacheslav Starikov <> (http://starikovs.com)",
+    "Julian Xhokaxhiu <info@julianxhokaxhiu.com> (http://julianxhokaxhiu.com)"
+  ],
+  "description": "Style checkbox with CSS and Icon Fonts with help of alt-checkbox jQuery plugin",
+  "main": "jquery.alt-checkbox.js",
+  "keywords": [
+    "jquery",
+    "checkbox",
+    "fontawesome"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

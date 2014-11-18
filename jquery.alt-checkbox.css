@@ -28,7 +28,7 @@
 .alt-checkbox:hover, .alt-checkbox:focus {
   box-shadow: 0 0 3px 1px #ffce73;
 }
-.alt-checkbox:before {
+.alt-checkbox i {
   display: block;
   min-height: 1em;
   min-width: 1em;
@@ -38,11 +38,11 @@
   text-shadow: 0 1px 0 #dddddd, 0 2px 0 #ffffff, 0 -1px 0 #dddddd;
   visibility: hidden;
 }
-.alt-checkbox.outline-unchecked:before {
+.alt-checkbox.outline-unchecked i {
   color: #eee;
   visibility: visible;
 }
-.alt-checkbox.checked:before {
+.alt-checkbox.checked i {
   color: #999;
   visibility: visible;
 }
