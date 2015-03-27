@@ -1,60 +1,65 @@
 /*
- * alt-checkbox LESS file
+ * alt-checkbox CSS file
  * Version 1.0
  * http://alt-checkbox.starikovs.com
  *
- * alt-checkbox LESS file which helps to style checkbox with custom css using LESS syntax.
+ * alt-checkbox CSS file which helps to style checkbox with custom css
  *
- * Copyright (c) 2013 alt-checkbox.starikovs.com
+ * Copyright (c) 2013-2014 alt-checkbox.starikovs.com
  * Licensed under the MIT and GPL licenses.
  */
+
 .alt-checkbox {
-  display: inline-block;
-  background: #fbfbfb;
-  background-image: -ms-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
-  background-image: -moz-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
-  background-image: -o-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fbfbfb), color-stop(1, #ededed));
-  background-image: -webkit-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
-  background-image: linear-gradient(to bottom, #fbfbfb 0%, #ededed 100%);
-  border-radius: .2em;
-  box-shadow: 0 0 0 1px #ccc;
-  font-size: .8em;
-  line-height: 100%;
-  outline: none;
-  position: relative;
-  text-decoration: none;
+    display: inline-block;
+    background: #fbfbfb;
+    border-radius: .2em;
+    box-shadow: 0 0 0 1px #ddd;
+    font-size: .8em;
+    line-height: 100%;
+    outline: none;
+    position: relative;
+    text-decoration: none;
 }
-.alt-checkbox:hover, .alt-checkbox:focus {
-  box-shadow: 0 0 3px 1px #ffce73;
-}
-.alt-checkbox:before {
-  display: block;
-  min-height: 1em;
-  min-width: 1em;
-  padding: .05em;
-  position: relative;
-  text-align: center;
-  text-shadow: 0 1px 0 #dddddd, 0 2px 0 #ffffff, 0 -1px 0 #dddddd;
-  visibility: hidden;
-}
-.alt-checkbox.outline-unchecked:before {
-  color: #eee;
-  visibility: visible;
-}
-.alt-checkbox.checked:before {
-  color: #999;
-  visibility: visible;
-}
+
+.alt-checkbox:hover, 
 .alt-checkbox:focus {
-  outline: none;
+    box-shadow: 0 0 1px #66AFE9, 0 0 8px rgba(102, 175, 233, .6)
 }
+
+.alt-checkbox:before {
+    display: block;
+    min-height: 1em;
+    min-width: 1em;
+    padding: .05em;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 0 #e7e7e7, 0 2px 0 #fff, 0 -1px 0 #e7e7e7;
+    visibility: hidden;
+}
+
+.alt-checkbox.outline-unchecked:before {
+    color: #f7f7f7;
+    visibility: visible;
+}
+
+.alt-checkbox.checked:before {
+    color: #999;
+    visibility: visible;
+}
+
+.alt-checkbox:focus {
+    outline: none;
+}
+
 .alt-checkbox.small, .alt-checkbox-label.small {
-  font-size: .8em;
+    font-size: .8em;
 }
+
 .alt-checkbox.medium, .alt-checkbox-label.medium {
-  font-size: 1.6em;
+    font-size: 1.6em;
 }
+
 .alt-checkbox.big, .alt-checkbox-label.big {
-  font-size: 2.4em;
+    font-size: 2.4em;
 }
+
