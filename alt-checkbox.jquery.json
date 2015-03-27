@@ -3,7 +3,7 @@
     "title": "alt-checkbox jQuery plugin",
     "description": "jQuery plugin which helps to style checkbox with CSS and Icon Fonts.",
     "keywords": ["input", "form", "checkbox"],
-    "version": "2.0.0",
+    "version": "2.0.1",
     "author": {
         "name": "Vacheslav Starikov",
         "url": "http://starikovs.com"

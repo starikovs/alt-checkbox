@@ -16,6 +16,14 @@ Features:
 
 alt-checkbox plugin is under the MIT license.
 
+Release 2.0.0
+=============
+
+- Plugin refactoring, less number of files.
+- Default flat background of checkboxes.
+- cdnjs urls for jquery, font awesome, etc.
+- New jquery, font awesome.
+
 Browsers
 ============
 
