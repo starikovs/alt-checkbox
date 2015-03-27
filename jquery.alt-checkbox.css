@@ -12,14 +12,8 @@
 .alt-checkbox {
     display: inline-block;
     background: #fbfbfb;
-    background-image: -ms-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
-    background-image: -moz-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
-    background-image: -o-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fbfbfb), color-stop(1, #ededed));
-    background-image: -webkit-linear-gradient(top, #fbfbfb 0%, #ededed 100%);
-    background-image: linear-gradient(to bottom, #fbfbfb 0%, #ededed 100%);
     border-radius: .2em;
-    box-shadow: 0 0 0 1px #ccc;
+    box-shadow: 0 0 0 1px #ddd;
     font-size: .8em;
     line-height: 100%;
     outline: none;
@@ -29,7 +23,7 @@
 
 .alt-checkbox:hover, 
 .alt-checkbox:focus {
-    box-shadow: 0 0 1px #66AFE9, 0px 0px 8px rgba(102, 175, 233, 0.6);
+    box-shadow: 0 0 1px #66AFE9, 0 0 8px rgba(102, 175, 233, .6)
 }
 
 .alt-checkbox:before {
@@ -39,12 +33,12 @@
     padding: .05em;
     position: relative;
     text-align: center;
-    text-shadow: 0 1px 0 #dddddd, 0 2px 0 #ffffff, 0 -1px 0 #dddddd;
+    text-shadow: 0 1px 0 #e7e7e7, 0 2px 0 #fff, 0 -1px 0 #e7e7e7;
     visibility: hidden;
 }
 
 .alt-checkbox.outline-unchecked:before {
-    color: #eee;
+    color: #f7f7f7;
     visibility: visible;
 }
 
