@@ -48,8 +48,9 @@
                     sizeClass: settings.sizeClass
                 });
 
-                alt.bind("click.alt-checkbox", function(event) {
+                alt.bind("click.alt-checkbox", function(e) {
                     var alt = $(this);
+
                     if (alt.hasClass("checked")) {
                         alt.removeClass("checked");
                         cb.prop("checked", false);
@@ -57,17 +58,19 @@
                         alt.addClass("checked");
                         cb.prop("checked", true);
                     }
-                    event.preventDefault();
-                }).bind("keyup.alt-checkbox", function(event) {
-                    if (event.keyCode === 32) {
+
+                    e.preventDefault();
+                }).bind("keyup.alt-checkbox", function(e) {
+                    if (e.keyCode === 32) {
                         $(this).click();
-                        event.preventDefault();
-                        event.stopPropagation();
+
+                        e.preventDefault();
+                        e.stopPropagation();
                     }
-                }).bind("keydown.alt-checkbox", function(event) {
-                    if (event.keyCode === 32) {
-                        event.preventDefault();
-                        event.stopPropagation();
+                }).bind("keydown.alt-checkbox", function(e) {
+                    if (e.keyCode === 32) {
+                        e.preventDefault();
+                        e.stopPropagation();
                     }
                 });
 
@@ -110,3 +113,4 @@
     };
 
 })(jQuery);
+
