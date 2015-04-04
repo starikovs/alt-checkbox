@@ -1,0 +1,23 @@
+{
+  "name": "alt-checkbox",
+  "version": "1.0.0",
+  "description": "jQuery plugin which helps to style checkbox with CSS and Icon Fonts.",
+  "homepage": "https://github.com/starikovs/alt-checkbox",
+  "main": "jquery.alt-checkbox.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starikovs/alt-checkbox.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "input",
+    "form",
+    "checkbox"
+  ],
+  "author": "Vacheslav Starikov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/starikovs/alt-checkbox/issues"
+  }
+}
