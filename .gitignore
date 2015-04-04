@@ -1,4 +1,10 @@
 # Vagrant files #
 #################
+.vagrant
 Vagrant*
+
+# Vagrant files #
+#################
+.npm
+npm*
 
