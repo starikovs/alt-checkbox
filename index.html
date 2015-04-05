@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>alt-checkbox jQuery plugin | style checkbox with css and icon fonts</title>
+    <meta charset="utf-8">
+    <meta name="description" content="alt-checkbox helps to style checkbox with css. It uses icon fonts and it's scaled well.">
+    <meta name="keywords" content="alt-checkbox, style checkbox css, jQuery plugin, checkbox, icon font">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <script src="jquery.alt-checkbox.js"></script>
+    <link rel="stylesheet" href="jquery.alt-checkbox.icon-font.css">
+    <link rel="stylesheet" href="jquery.alt-checkbox.css">
+
+    <style>
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            font: 90%/1.5 Tahoma,Geneva,sans-serif;
+            color: #333;
+        }
+        h1, .hero {
+            text-align: center;
+        }
+        .hero {
+            color: #a64600;
+        }
+        .layout {
+            display: table;
+            width: 100%;
+        }
+        .big-top-margin {
+            margin-top: 2em;
+        }
+        .top-margin {
+            margin-top: 1em;
+        }
+        .cell {
+            /*display: inline-block;*/
+            display: table-cell;
+            padding: 0 1em;
+        }
+        .cell-1 {
+            width: 100%;
+        }
+        .cell-1-3 {
+            width: 33.33%;
+        }
+        .cell-1-2 {
+            width: 50%;
+        }
+        .cell-1-4 {
+            width: 25%;
+        }
+        .cell-3-4 {
+            width: 75%;
+        }
+        .layout.top .cell {
+            vertical-align: top;
+        }
+        .gist {
+            font-size: 75%;
+        }
+        .checkbox4-slider-container {
+            display: block;
+            margin: 1em auto;
+            width: 100px;
+        }
+        .checkbox4-container {
+            display: block;
+            font-size: 4em;
+            text-align: center;
+            transition: font-size .2s;
+            -moz-transition: font-size .2s;
+            -webkit-transition: font-size .2s;
+            -o-transition: font-size .2s;
+        }
+        .custom-code {
+            font-size: .8em;
+        }
+        dt {
+            font-weight: bold;
+        }
+        .fb-like {
+            vertical-align: top;
+        }
+        .fb_iframe_widget span {
+            vertical-align: text-top !important;
+        }
+        .m-wrapper {
+            border-bottom: 1px dotted #ededed;
+            margin: 1em 3em;
+            padding-bottom: 1em;
+        }
+        .m {
+            height: 90px;
+            margin: 0 auto;
+            position: relative;
+            width: 728px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $( "#slider" ).slider({min: 1, max: 5, step:.5, value: 4,
+                slide: function (event, ui) {
+                    $(".checkbox4-container").css("font-size", ui.value + "em");
+                    setCustomSizeCode(ui.value);
+                }
+            });
+            setCustomSizeCode(4);
+
+            var make = (function() {
+                jQuery("#checkbox1").altCheckbox({outlineUnchecked: false, sizeClass: "small"});
+                jQuery("#checkbox2").altCheckbox();
+                jQuery("#checkbox3").altCheckbox({sizeClass: "big", iconClass: "fa-remove"});
+                jQuery("#checkbox4").altCheckbox({sizeClass: ""});
+            });
+            make();
+
+            $("#create").click(function(e) {
+                $("#checkbox5").altCheckbox();
+                e.preventDefault();
+            })
+
+            $("#clear").click(function(e) {
+                $("#checkbox5").altCheckbox("clear");
+                e.preventDefault();
+            })
+
+        });
+        function setCustomSizeCode(size) {
+            $(".custom-size-code").html(customSizeCode(size));
+        }
+        function customSizeCode(size) {
+            var t = "&lt;span style=\"<b>font-size: {size}em</b>\"&gt;<br>" +
+                    "&nbsp;&nbsp;&lt;input type=\"checkbox\" id=\"cb\"&gt;<br>" +
+                    "&nbsp;&nbsp;&lt;label for=\"cb\"&gt;Check Me! I'm any size.&lt;/label&gt;<br>" +
+                    "&lt;/span&gt;";
+            return t.replace("{size}", size);
+
+        }
+    </script>
+<body>
+    <h1>alt-checkbox</h1>
+    <p style="text-align: center; font-size: .7em"><a href="https://github.com/starikovs/alt-checkbox/archive/master.zip" rel="nofollow">Download</a> <a href="https://github.com/starikovs/alt-checkbox" rel="nofollow">Project on GitHub</a> <a href="demo.html" rel="nofollow">Pure demo</a></p>
+    <p class="hero">alt-checkbox helps to style checkbox with css. It uses icon fonts and it's scaled well.</p>
+    <div class="layout  big-top-margin">
+        <div class="cell cell-1-3">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Check Me! I'm small.</label>
+        </div>
+        <div class="cell cell-1-3">
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Check Me! I'm medium.</label>
+        </div>
+        <div class="cell cell-1-3">
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3">Check Me! I'm big.</label>
+        </div>
+    </div>
+    <div class="layout top top-margin">
+        <div class="cell cell-1-3">
+            <script src="https://gist.github.com/starikovs/4980295.js"></script>
+        </div>
+        <div class="cell cell-1-3">
+            <script src="https://gist.github.com/starikovs/4980428.js"></script>
+        </div>
+        <div class="cell cell-1-3">
+            <script src="https://gist.github.com/starikovs/4980567.js"></script>
+        </div>
+    </div>
+    <div class="layout top big-top-margin">
+        <div class="cell cell-3-4">
+            <h2>Custom size demo</h2>
+            <div class="checkbox4-slider-container">
+                <div id="slider"></div>
+            </div>
+            <span class="checkbox4-container">
+                <input type="checkbox" id="checkbox4">
+                <label for="checkbox4">Check Me! I'm any size.</label>
+            </span>
+        </div>
+        <div class="cell cell-1-4">
+            <h2>Custom size code</h2>
+            <div class="custom-code custom-size-code"></div>
+        </div>
+    </div>
+    <div class="layout top big-top-margin">
+        <div class="cell cell-1-3">
+            <h2>Create and clear demo</h2>
+            <div style="text-align: center; margin-bottom: 1em">
+                <a href="#" id="create">Create</a> |
+                <a href="#" id="clear">Clear</a>
+            </div>
+            <div style="text-align: center">
+                <input type="checkbox" id="checkbox5">
+                <label for="checkbox5">Check Me!</label>
+            </div>
+        </div>
+        <div class="cell cell-1-3">
+            <h2>Create code</h2>
+            <div class="custom-code">$("#checkbox").altCheckbox();</div>
+        </div>
+        <div class="cell cell-1-3">
+            <h2>Clear code</h2>
+            <div class="custom-code">$("#checkbox").altCheckbox("clear");</div>
+        </div>
+    </div>
+    <div class="layout top big-top-margin">
+        <div class="cell cell-1-2">
+            <h2>What is this?</h2>
+            <p>alt-checkbox is a nice and flexible alternative to a standard HTML checkbox.</p>
+            <p>It's a jQuery plugin that comes with the default css that can be customized. You can style it as you want by modifying the plugin's styles in the css file.</p>
+            <p>By default, it utilizes icon fonts that allows to scale the checkbox to any size and apply some exotic icons.</p>
+            <p>alt-checkbox is created based on the standard HTML checkbox and synchronized with it to reflect the proper checked state.</p>
+        </div>
+        <div class="cell cell-1-2">
+            <h2>Features</h2>
+            <ul>
+                <li>Custom styling</li>
+                <li>Flexible scaling</li>
+                <li>Icon fonts for icons</li>
+                <li>Mouse as well as keyboard (tab and space) to check and uncheck the checkbox</li>
+                <li>Label scaling together with the checkbox</li>
+                <li>Outlining the icon for unchecked state</li>
+                <li>Unchecked, checked, hovered and focused states</li>
+                <li>Ability to remove alt-checkbox and get standard HTML checkbox with proper state</li>
+                <li>Know more features by reading the <a href="https://github.com/starikovs/alt-checkbox">source code</a> on GitHub</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="layout top big-top-margin">
+        <div class="cell cell-1-2">
+            <h2>Methods</h2>
+            <dl>
+                <dt>altCheckbox(options)</dt>
+                <dd>Creates alt-checkbox based on HTML checkbox and hides HTML checkbox.</dd>
+                <dt>altCheckbox("clear")</dt>
+                <dd>Removes alt-checkbox and shows its original HTML checkbox.</dd>
+
+            </dl>
+        </div>
+        <div class="cell cell-1-2">
+            <h2>Options</h2>
+            <dl>
+                <dt>iconClass</dt>
+                <dd>CSS class for icon font. Default value is <b>"fa-check"</b>.</dd>
+                <dt>sizeClass</dt>
+                <dd>CSS class to apply some size styles. Default value is <b>"medium"</b>.</dd>
+                <dt>customClass</dt>
+                <dd>Some custom CSS class that may be added to alt-checkbox. Default value is <b>""</b>.</dd>
+                <dt>labelSameSize</dt>
+                <dd>Is label the same size as alt-checkbox. Default value is <b>true</b>.</dd>
+                <dt>outlineUnchecked</dt>
+                <dd>Is icon outlined for the passive state. Default value is <b>true</b>.</dd>
+            </dl>
+        </div>
+    </div>
+
+
+    <div class="layout top big-top-margin">
+        <div class="cell cell-1-2">
+            <h2>How does it work?</h2>
+            <ol>
+                <li>Include jQuery library to the <code>head</code> section</li>
+                <li><code>@import</code> the desired icon font in the <code>jquery.alt-checkbox.icon-font.css</code> and include this css file in the <code>head</code> section, Font Awesome is used by default</li>
+                <li>Style the checkbox if you want in the <code>jquery.alt-checkbox.css</code> file</li>
+                <li>Include <code>jquery.alt-checkbox.css</code> to the <code>head</code> section</li>
+                <li>Include <code>jquery.alt-checkbox.js</code> to the <code>head</code> section</li>
+                <li>Select some checkboxes with the jQuery and apply the alt-checkbox plugin for them specifying some options if you need</li>
+            </ol>
+        </div>
+        <div class="cell cell-1-2">
+            <h2>Example code</h2>
+            <script src="https://gist.github.com/starikovs/5008245.js"></script>
+        </div>
+
+    </div>
+
+    <div class="layout top big-top-margin">
+        <div class="cell cell-1-4">
+            <h2>PHP demo</h2>
+            <p>It's simple to get the value of alt-checkbox with PHP. You can process alt-checkbox with PHP the same way as standard HTML checkbox is processed. So, you can easily replace standard HTML checkbox with alt-checkbox in your project.</p>
+            <p>Here's the example page of using <a href="demo.php">alt-checkbox and PHP</a>.</p>
+        </div>
+        <div class="cell cell-3-4">
+            <h2>PHP demo code snippet</h2>
+            <script src="https://gist.github.com/starikovs/5127659.js"></script>
+        </div>
+    </div>
+
+    <div class="layout top big-top-margin">
+        <div class="cell cell-1-2">
+            <p style="font-size:.9em">© 2015  alt-checkbox.starikovs.com</p>
+        </div>
+        <div class="cell cell-1-2">
+            <p style="font-size:.9em;text-align:right">alt-checkbox plugin is under the <a href="https://raw.github.com/starikovs/alt-checkbox/master/MIT-LICENSE.txt">MIT license</a></p>
+        </div>
+    </div>
+    <a href="https://github.com/starikovs/alt-checkbox"><img style="position:absolute;top:0;right:0;border:0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+</body>
+</html>
