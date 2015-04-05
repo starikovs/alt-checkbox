@@ -2,7 +2,7 @@
   "name": "alt-checkbox",
   "version": "2.0.3",
   "description": "jQuery plugin which helps to style checkbox with CSS and Icon Fonts.",
-  "homepage": "https://github.com/starikovs/alt-checkbox",
+  "homepage": "http://alt-checkbox.starikovs.com/",
   "main": "./jquery.alt-checkbox.js",
   "style": [
     "./jquery.alt-checkbox.icon-font.css",
