@@ -49,16 +49,13 @@
                 });
 
                 alt.on("click.alt-checkbox", function(e) {
-                    var alt = $(this);
-
                     if (alt.hasClass("checked")) {
-                        alt.removeClass("checked");
                         cb.prop("checked", false);
                     } else {
-                        alt.addClass("checked");
                         cb.prop("checked", true);
                     }
 
+                    cb.trigger("change");
                     e.preventDefault();
                 }).on("keyup.alt-checkbox", function(e) {
                     if (e.keyCode === 32) {
@@ -75,7 +72,11 @@
                 });
 
                 cb.on("change.alt-checkbox", function() {
-                    alt.click();
+                    if ($(this).prop("checked")) {
+                        alt.addClass("checked");
+                    } else {
+                        alt.removeClass("checked");
+                    }
                 });
 
                 alt.addClass(cb.is(":checked") ? "checked" : "");
