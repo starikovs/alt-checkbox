@@ -48,7 +48,7 @@
                     sizeClass: settings.sizeClass
                 });
 
-                alt.bind("click.alt-checkbox", function(e) {
+                alt.on("click.alt-checkbox", function(e) {
                     var alt = $(this);
 
                     if (alt.hasClass("checked")) {
@@ -60,21 +60,21 @@
                     }
 
                     e.preventDefault();
-                }).bind("keyup.alt-checkbox", function(e) {
+                }).on("keyup.alt-checkbox", function(e) {
                     if (e.keyCode === 32) {
                         $(this).click();
 
                         e.preventDefault();
                         e.stopPropagation();
                     }
-                }).bind("keydown.alt-checkbox", function(e) {
+                }).on("keydown.alt-checkbox", function(e) {
                     if (e.keyCode === 32) {
                         e.preventDefault();
                         e.stopPropagation();
                     }
                 });
 
-                cb.bind("change.alt-checkbox", function() {
+                cb.on("change.alt-checkbox", function() {
                     alt.click();
                 });
 
@@ -90,8 +90,8 @@
                     return;
                 }
 
-                data.alt.unbind(".alt-checkbox").remove();
-                cb.unbind(".alt-checkbox");
+                data.alt.off(".alt-checkbox").remove();
+                cb.off(".alt-checkbox");
 
                 if (data.labelSameSize) {
                     data.label.removeClass(data.sizeClass).removeClass("alt-checkbox-label");
