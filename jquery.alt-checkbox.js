@@ -48,34 +48,35 @@
                     sizeClass: settings.sizeClass
                 });
 
-                alt.bind("click.alt-checkbox", function(e) {
-                    var alt = $(this);
-
+                alt.on("click.alt-checkbox", function(e) {
                     if (alt.hasClass("checked")) {
-                        alt.removeClass("checked");
                         cb.prop("checked", false);
                     } else {
-                        alt.addClass("checked");
                         cb.prop("checked", true);
                     }
 
+                    cb.trigger("change");
                     e.preventDefault();
-                }).bind("keyup.alt-checkbox", function(e) {
+                }).on("keyup.alt-checkbox", function(e) {
                     if (e.keyCode === 32) {
                         $(this).click();
 
                         e.preventDefault();
                         e.stopPropagation();
                     }
-                }).bind("keydown.alt-checkbox", function(e) {
+                }).on("keydown.alt-checkbox", function(e) {
                     if (e.keyCode === 32) {
                         e.preventDefault();
                         e.stopPropagation();
                     }
                 });
 
-                cb.bind("change.alt-checkbox", function() {
-                    alt.click();
+                cb.on("change.alt-checkbox", function() {
+                    if ($(this).prop("checked")) {
+                        alt.addClass("checked");
+                    } else {
+                        alt.removeClass("checked");
+                    }
                 });
 
                 alt.addClass(cb.is(":checked") ? "checked" : "");
@@ -90,8 +91,8 @@
                     return;
                 }
 
-                data.alt.unbind(".alt-checkbox").remove();
-                cb.unbind(".alt-checkbox");
+                data.alt.off(".alt-checkbox").remove();
+                cb.off(".alt-checkbox");
 
                 if (data.labelSameSize) {
                     data.label.removeClass(data.sizeClass).removeClass("alt-checkbox-label");
