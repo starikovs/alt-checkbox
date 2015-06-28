@@ -47,7 +47,12 @@ git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/vundle
 
 # Nginx 
 
-sudo apt-get -y install nginx
+#sudo apt-get -y install nginx
+
+# Configure nginx to use /vagrant folder
+
+#sudo sed -i 's/\/usr\/share\/nginx\/html/\/vagrant/g' /etc/nginx/sites-available/default
+#sudo service nginx reload
 
 # Nodejs (npm included)
 
@@ -61,9 +66,4 @@ sudo npm install -g npm
 # Gulp 
 
 sudo npm install --global gulp
-
-# Configure nginx to use /vagrant folder
-
-sudo sed -i 's/\/usr\/share\/nginx\/html/\/vagrant/g' /etc/nginx/sites-available/default
-sudo service nginx reload
 
