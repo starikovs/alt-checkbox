@@ -1,49 +1,262 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>alt-checkbox demo</title>
+    <title>alt-checkbox jQuery plugin Demo</title>
     <meta charset="utf-8">
+    <meta name="description" content="alt-checkbox demo page.">
+    <meta name="keywords" content="alt-checkbox, style checkbox css, jQuery plugin, checkbox, icon font">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <script src="jquery.alt-checkbox.js"></script>
     <link rel="stylesheet" href="jquery.alt-checkbox.icon-font.css">
     <link rel="stylesheet" href="jquery.alt-checkbox.css">
-</head>
+
+    <style>
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            font: 90%/1.5 Tahoma,Geneva,sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1, .hero {
+            text-align: center;
+        }
+        .hero {
+            color: #a64600;
+        }
+        .layout {
+            display: table;
+            width: 100%;
+        }
+        .big-top-margin {
+            margin-top: 4em;
+        }
+        .top-margin {
+            margin-top: 2em;
+        }
+        .cell {
+            /*display: inline-block;*/
+            display: table-cell;
+            padding: 0 1em;
+        }
+        .cell-1 {
+            width: 100%;
+        }
+        .cell-1-3 {
+            width: 33.33%;
+        }
+        .cell-1-2 {
+            width: 50%;
+        }
+        .cell-1-4 {
+            width: 25%;
+        }
+        .cell-3-4 {
+            width: 75%;
+        }
+        .layout.top .cell {
+            vertical-align: top;
+        }
+        .gist {
+            font-size: 75%;
+        }
+        .checkbox4-slider-container {
+            display: block;
+            margin: 1em auto;
+            width: 100px;
+        }
+        .checkbox4-container {
+            display: block;
+            font-size: 4em;
+            text-align: center;
+            transition: font-size .2s;
+            -moz-transition: font-size .2s;
+            -webkit-transition: font-size .2s;
+            -o-transition: font-size .2s;
+        }
+        .custom-code {
+            font-size: .8em;
+        }
+        dt {
+            font-weight: bold;
+        }
+        .fb-like {
+            vertical-align: top;
+        }
+        .fb_iframe_widget span {
+            vertical-align: text-top !important;
+        }
+        .m-wrapper {
+            border-bottom: 1px dotted #ededed;
+            margin: 1em 3em;
+            padding-bottom: 1em;
+        }
+        .m {
+            height: 90px;
+            margin: 0 auto;
+            position: relative;
+            width: 728px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $( "#slider" ).slider({min: 1, max: 5, step:.5, value: 4,
+                slide: function (event, ui) {
+                    $(".checkbox4-container").css("font-size", ui.value + "em");
+                    setCustomSizeCode(ui.value);
+                }
+            });
+            setCustomSizeCode(4);
+
+            var make = (function() {
+                jQuery("#checkbox1").altCheckbox({outlineUnchecked: false, sizeClass: "small"});
+                jQuery("#checkbox2").altCheckbox();
+                jQuery("#checkbox3").altCheckbox({sizeClass: "big", iconClass: "fa-remove"});
+                jQuery("#checkbox4").altCheckbox({sizeClass: ""});
+            });
+            make();
+
+            $("#create").click(function(e) {
+                $("#checkbox5").altCheckbox();
+                e.preventDefault();
+            })
+
+            $("#clear").click(function(e) {
+                $("#checkbox5").altCheckbox("clear");
+                e.preventDefault();
+            })
+
+        });
+        function setCustomSizeCode(size) {
+            $(".custom-size-code").html(customSizeCode(size));
+        }
+        function customSizeCode(size) {
+            var t = "&lt;span style=\"<b>font-size: {size}em</b>\"&gt;<br>" +
+                    "&nbsp;&nbsp;&lt;input type=\"checkbox\" id=\"cb\"&gt;<br>" +
+                    "&nbsp;&nbsp;&lt;label for=\"cb\"&gt;Check Me! I'm any size.&lt;/label&gt;<br>" +
+                    "&lt;/span&gt;";
+            return t.replace("{size}", size);
+
+        }
+    </script>
 <body>
-    <h1>alt-checkbox demo</h1>
+    <div class="layout" style="background:#0b486b;color:#fff;overflow:hidden;margin-bottom:8em;">
+        <div class="cell">
+            <h1><a href="http://alt-checkbox.starikovs.com" style="color:#79bd9a">alt-checkbox</a> demo page</h1>
+        </div>
+    </div>
+    <div class="layout  big-top-margin">
+        <div class="cell" style="text-align:center">
+            <input type="checkbox" id="demo-checkbox1">
+            <label for="demo-checkbox1">Check Me! I'm small.</label>
 
-    <input type="checkbox" id="checkbox1">
-    <label for="checkbox1">Check Me! I'm small.</label>
+            <input type="checkbox" id="demo-checkbox2">
+            <label for="demo-checkbox2" >Check Me! I'm medium.</label>
 
-    <input type="checkbox" id="checkbox2">
-    <label for="checkbox2" >Check Me! I'm medium.</label>
-
-    <input type="checkbox" id="checkbox3">
-    <label for="checkbox3">Check Me! I'm big.</label>
+            <input type="checkbox" id="demo-checkbox3">
+            <label for="demo-checkbox3">Check Me! I'm big.</label>
 
 
-    <div>
-        <a href="#" id="make">make</a>
-        <a href="#" id="clear">clear</a>
+            <div>
+                <a href="#" id="demo-make">make</a>
+                <a href="#" id="demo-clear">clear</a>
+            </div>
+        </div>
+    </div>
+    <div class="layout  big-top-margin">
+        <div class="cell cell-1-3">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Check Me! I'm small.</label>
+        </div>
+        <div class="cell cell-1-3">
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Check Me! I'm medium.</label>
+        </div>
+        <div class="cell cell-1-3">
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3">Check Me! I'm big.</label>
+        </div>
+    </div>
+    <div class="layout top top-margin">
+        <div class="cell cell-1-3">
+            <script src="https://gist.github.com/starikovs/4980295.js"></script>
+        </div>
+        <div class="cell cell-1-3">
+            <script src="https://gist.github.com/starikovs/4980428.js"></script>
+        </div>
+        <div class="cell cell-1-3">
+            <script src="https://gist.github.com/starikovs/4980567.js"></script>
+        </div>
+    </div>
+    <div class="layout top big-top-margin">
+        <div class="cell cell-3-4">
+            <h2>Custom size demo</h2>
+            <div class="checkbox4-slider-container">
+                <div id="slider"></div>
+            </div>
+            <span class="checkbox4-container">
+                <input type="checkbox" id="checkbox4">
+                <label for="checkbox4">Check Me! I'm any size.</label>
+            </span>
+        </div>
+        <div class="cell cell-1-4">
+            <h2>Custom size code</h2>
+            <div class="custom-code custom-size-code"></div>
+        </div>
+    </div>
+    <div class="layout top big-top-margin">
+        <div class="cell cell-1-3">
+            <h2>Create and clear demo</h2>
+            <div style="text-align: center; margin-bottom: 1em">
+                <a href="#" id="create">Create</a> |
+                <a href="#" id="clear">Clear</a>
+            </div>
+            <div style="text-align: center">
+                <input type="checkbox" id="checkbox5">
+                <label for="checkbox5">Check Me!</label>
+            </div>
+        </div>
+        <div class="cell cell-1-3">
+            <h2>Create code</h2>
+            <div class="custom-code">$("#checkbox").altCheckbox();</div>
+        </div>
+        <div class="cell cell-1-3">
+            <h2>Clear code</h2>
+            <div class="custom-code">$("#checkbox").altCheckbox("clear");</div>
+        </div>
+    </div>
+    <div class="layout top big-top-margin">
+        <div class="cell cell-1-2">
+            <p style="font-size:.9em">© 2015  alt-checkbox.starikovs.com</p>
+        </div>
+        <div class="cell cell-1-2">
+            <p style="font-size:.9em;text-align:right">alt-checkbox plugin is under the <a href="https://raw.github.com/starikovs/alt-checkbox/master/MIT-LICENSE.txt">MIT license</a></p>
+        </div>
     </div>
 
     <script>
         var make = (function() {
-            jQuery("#checkbox1").altCheckbox({outlineUnchecked: false, sizeClass: "small"});
-            jQuery("#checkbox2").altCheckbox();
-            jQuery("#checkbox3").altCheckbox({sizeClass: "big"});
+            jQuery("#demo-checkbox1").altCheckbox({outlineUnchecked: false, sizeClass: "small"});
+            jQuery("#demo-checkbox2").altCheckbox();
+            jQuery("#demo-checkbox3").altCheckbox({sizeClass: "big"});
         });
         make();
 
-        jQuery("#make").click(function (e) {
+        jQuery("#demo-make").click(function (e) {
             make();
             e.preventDefault();
         });
 
-        jQuery("#clear").click(function (e) {
+        jQuery("#demo-clear").click(function (e) {
             jQuery('[type=checkbox]').altCheckbox('clear');
             e.preventDefault();
         });
     </script>
-
 </body>
 </html>
