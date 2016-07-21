@@ -14,7 +14,38 @@ Features:
 - It can be styled as you wish with help of css
 - It's possible to navigate and check with keyboard (tab and space)
 
-alt-checkbox plugin is under the MIT license.
+Example of how to use it
+========================
+
+First, include some scripts and styles for alt-checkbox in `head` section.
+
+    <head>
+       <!-- 1. jQuery -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+       <!-- 2. @import an icon font inside this file, Font Awesome is used by default -->
+       <link rel="stylesheet" href="jquery.alt-checkbox.icon-font.css">
+    
+       <!-- 3. Style checkboxes if you want inside this file -->
+       <link rel="stylesheet" href="jquery.alt-checkbox.css">
+    
+       <!-- 4. Include alt-checkbox jQuery plugin -->
+       <script src="jquery.alt-checkbox.js"></script>
+    </head>
+
+Then, replace some standard HTML checkboxes with alt-checkbox.
+
+    <body>
+      <input type="checkbox" id="checkbox1">
+      <label for="checkbox1">Check Me!</label>
+ 
+      <script>
+        jQuery("#checkbox1").altCheckbox({
+          iconClass: "fa-thumbs-o-up"
+          /* and some other options if you need */
+        });
+      </script>
+    </body>
 
 Release 2.0.0
 =============
@@ -34,3 +65,5 @@ Tested in the following browsers:
 - Opera 12
 - IE 9
 - Safari 5
+
+*alt-checkbox plugin is under the MIT license.*
